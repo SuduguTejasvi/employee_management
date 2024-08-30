@@ -455,14 +455,14 @@ instanceKlass javax/management/ObjectInstance
 instanceKlass com/sun/jmx/mbeanserver/NamedObject
 instanceKlass com/sun/jmx/interceptor/DefaultMBeanServerInterceptor$ResourceContext$1
 instanceKlass com/sun/jmx/interceptor/DefaultMBeanServerInterceptor$ResourceContext
-instanceKlass com/sun/jmx/mbeanserver/Repository$RegistrationContext
+instanceKlass com/sun/jmx/mbeanserver/repository$RegistrationContext
 instanceKlass com/sun/jmx/mbeanserver/DynamicMBean2
 instanceKlass com/sun/jmx/defaults/JmxProperties
 instanceKlass com/sun/jmx/mbeanserver/Introspector
 instanceKlass com/sun/jmx/mbeanserver/JmxMBeanServer$2
 instanceKlass com/sun/jmx/interceptor/DefaultMBeanServerInterceptor
 instanceKlass com/sun/jmx/interceptor/MBeanServerInterceptor
-instanceKlass com/sun/jmx/mbeanserver/Repository
+instanceKlass com/sun/jmx/mbeanserver/repository
 instanceKlass com/sun/jmx/mbeanserver/JmxMBeanServer$1
 instanceKlass com/sun/jmx/mbeanserver/SecureClassLoaderRepository
 instanceKlass com/sun/jmx/mbeanserver/MBeanInstantiator
@@ -769,7 +769,7 @@ instanceKlass java/beans/PropertyChangeListener
 instanceKlass java/util/EventListener
 instanceKlass java/beans/ChangeListenerMap
 instanceKlass java/beans/PropertyChangeSupport
-instanceKlass org/apache/catalina/Service
+instanceKlass org/apache/catalina/service
 instanceKlass java/util/concurrent/ScheduledExecutorService
 instanceKlass org/apache/catalina/LifecycleListener
 instanceKlass org/apache/tomcat/util/IntrospectionUtils
@@ -1044,7 +1044,7 @@ instanceKlass java/time/format/DateTimeFormatterBuilder$OffsetIdPrinterParser
 instanceKlass java/time/format/DecimalStyle
 instanceKlass java/time/format/DateTimeFormatterBuilder$CompositePrinterParser
 instanceKlass java/time/format/DateTimeFormatterBuilder$CharLiteralPrinterParser
-instanceKlass org/apache/catalina/startup/ClassLoaderFactory$Repository
+instanceKlass org/apache/catalina/startup/ClassLoaderFactory$repository
 instanceKlass java/time/format/DateTimeFormatterBuilder$NumberPrinterParser
 instanceKlass java/time/format/DateTimeFormatterBuilder$DateTimePrinterParser
 instanceKlass java/time/temporal/JulianFields

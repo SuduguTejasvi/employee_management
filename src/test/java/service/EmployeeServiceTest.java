@@ -1,4 +1,6 @@
-import com.example.dao.EmployeeDAO;
+package service;
+
+import com.example.repository.EmployeeDAO;
 import com.example.dto.EmployeeDTO;
 import com.example.dto.ProjectDTO;
 import com.example.entity.Employee;
@@ -23,21 +25,21 @@ import static org.mockito.Mockito.*;
 public class EmployeeServiceTest {
 
     @InjectMocks
-    private EmployeeServiceImpl employeeService;
+    public EmployeeServiceImpl employeeService;
 
     @Mock
-    private EmployeeDAO employeeDAO;
+    public EmployeeDAO employeeDAO;
 
     @Mock
-    private ProjectService projectService;
+    public ProjectService projectService;
 
-    private Employee employee;
-    private EmployeeDTO employeeDTO;
-    private ProjectDTO projectDTO;
-    private Projects project;
+    public Employee employee;
+    public EmployeeDTO employeeDTO;
+    public ProjectDTO projectDTO;
+    public Projects project;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         project = new Projects(1, "Project A", new Date(), new Date());
         employee = new Employee("John", "Doe", "john.doe@example.com", new Date());
         employee.setEmployeeId(1L);
@@ -47,7 +49,7 @@ public class EmployeeServiceTest {
     }
 
     @Test
-    void testFindAll() {
+    public void testFindAll() {
         List<Employee> employees = new ArrayList<>();
         employees.add(employee);
 
@@ -63,7 +65,7 @@ public class EmployeeServiceTest {
     }
 
     @Test
-    void testFindById() {
+    public void testFindById() {
         when(employeeDAO.findById(anyLong())).thenReturn(employee);
         when(employeeDAO.getEmployeeProjects(anyLong())).thenReturn("Project A");
 
@@ -74,7 +76,7 @@ public class EmployeeServiceTest {
     }
 
     @Test
-    void testSave() {
+    public void testSave() {
         when(projectService.findById(anyInt())).thenReturn(projectDTO);
         doNothing().when(employeeDAO).save(any(Employee.class));
 
@@ -84,7 +86,7 @@ public class EmployeeServiceTest {
     }
 
     @Test
-    void testDeleteById() {
+    public void testDeleteById() {
         doNothing().when(employeeDAO).delete(anyLong());
 
         String result = employeeService.deleteById(1L);
@@ -93,7 +95,7 @@ public class EmployeeServiceTest {
     }
 
     @Test
-    void testGetEmployeeProjects() {
+    public void testGetEmployeeProjects() {
         when(employeeDAO.getEmployeeProjects(anyLong())).thenReturn("Project A");
 
         String result = employeeService.getEmployeeProjects(1L);
@@ -102,7 +104,7 @@ public class EmployeeServiceTest {
     }
 
     @Test
-    void testConvertToDTOWithProjects() {
+    public void testConvertToDTOWithProjects() {
         when(employeeDAO.getEmployeeProjects(anyLong())).thenReturn("Project A");
 
         EmployeeDTO result = employeeService.convertToDTOWithProjects(employee);
@@ -112,7 +114,7 @@ public class EmployeeServiceTest {
     }
 
     @Test
-    void testConvertToEntity() {
+    public void testConvertToEntity() {
         when(projectService.findById(anyInt())).thenReturn(projectDTO);
 
         Employee result = employeeService.convertToEntity(employeeDTO);

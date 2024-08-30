@@ -1,6 +1,5 @@
-package com.example.dao;
+package com.example.repository;
 
-import com.example.entity.Employee;
 import com.example.entity.Projects;
 
 import java.util.List;

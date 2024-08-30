@@ -1,4 +1,6 @@
-import com.example.dao.ProjectDAO;
+package service;
+
+import com.example.repository.ProjectDAO;
 import com.example.dto.ProjectDTO;
 import com.example.entity.Projects;
 import com.example.service.ProjectServiceImpl;
@@ -20,22 +22,22 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class ProjectServiceTest {
     @InjectMocks
-    private ProjectServiceImpl projectService;
+    public ProjectServiceImpl projectService;
 
     @Mock
-    private ProjectDAO projectDAO;
+    public ProjectDAO projectDAO;
 
-    private Projects project;
-    private ProjectDTO projectDTO;
+    public Projects project;
+    public ProjectDTO projectDTO;
 
     @BeforeEach
-    void setUp(){
+    public void setUp(){
         project = new Projects(1, "Project A", new Date(), new Date());
         projectDTO = new ProjectDTO(1, "Project A", new Date(), new Date());
     }
 
     @Test
-    void testFindAll() {
+    public void testFindAll() {
         List<Projects> projectsList = new ArrayList<>();
         projectsList.add(project);
 
@@ -49,7 +51,7 @@ public class ProjectServiceTest {
     }
 
     @Test
-    void testFindById() {
+    public void testFindById() {
         when(projectDAO.findAllById(anyInt())).thenReturn(project);
 
         ProjectDTO result = projectService.findById(1);
@@ -59,7 +61,7 @@ public class ProjectServiceTest {
     }
 
     @Test
-    void testSave() {
+    public void testSave() {
 
         String result = projectService.save(projectDTO);
 
@@ -67,20 +69,20 @@ public class ProjectServiceTest {
     }
 
     @Test
-    void testDeleteById() {
+    public void testDeleteById() {
 
         String result = projectService.deleteById(1);
 
         assertEquals("Deleted successfully", result);
     }
     @Test
-    void testConvertToEntity() {
+    public void testConvertToEntity() {
         Projects result = projectService.convertToEntity(projectDTO);
         assertEquals(project.getProjectId(), result.getProjectId());
         assertEquals(project.getProjectName(), result.getProjectName());
     }
     @Test
-    void testConvertToDTO() {
+    public void testConvertToDTO() {
         ProjectDTO result = projectService.convertToDTO(project);
 
         assertEquals(projectDTO.getProjectId(), result.getProjectId());

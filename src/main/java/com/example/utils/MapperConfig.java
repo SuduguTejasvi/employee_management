@@ -10,11 +10,9 @@ import org.springframework.stereotype.Controller;
 
 @Configuration
 public class MapperConfig {
-    @Value("${username}")
-    private String username;
+
     @Bean
     public ModelMapper modelMapper(){
-        System.out.println(username);
         return new ModelMapper();
     }
 }

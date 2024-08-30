@@ -1,3 +1,5 @@
+package controller;
+
 import com.example.controller.ProjectController;
 import com.example.dto.ProjectDTO;
 import com.example.service.ProjectService;
@@ -22,13 +24,13 @@ import static org.mockito.Mockito.when;
 public class ProjectControllerTest {
 
     @Mock
-    private ProjectService projectService;
+    public ProjectService projectService;
 
     @InjectMocks
-    private ProjectController projectController;
+    public ProjectController projectController;
 
     @Mock
-    private Model model;
+    public Model model;
 
     @Test
     public void testViewProjectPage() throws Exception{

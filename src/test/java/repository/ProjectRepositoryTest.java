@@ -1,4 +1,6 @@
-import com.example.dao.ProjectDAOImpl;
+package repository;
+
+import com.example.repository.ProjectDAOImpl;
 import com.example.entity.Projects;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -22,24 +24,24 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class ProjectRepositoryTest {
     @InjectMocks
-    private ProjectDAOImpl projectDAO;
+    public ProjectDAOImpl projectDAO;
 
     @Mock
-    private SessionFactory sessionFactory;
+    public SessionFactory sessionFactory;
 
     @Mock
-    private Session session;
+    public Session session;
 
-    private Projects project;
+    public Projects project;
 
     @BeforeEach
-    void setUp(){
+    public void setUp(){
         project=new Projects(1,"Project A",new Date(),new Date());
         when(sessionFactory.getCurrentSession()).thenReturn(session);
     }
 
     @Test
-    void testFindAll() {
+    public void testFindAll() {
         List<Projects> projectsList = new ArrayList<>();
         projectsList.add(project);
 
@@ -51,7 +53,7 @@ public class ProjectRepositoryTest {
         assertEquals(1, result.size());
     }
     @Test
-    void testFindById() {
+    public void testFindById() {
         when(session.get(Projects.class, 1)).thenReturn(project);
 
         Projects result = projectDAO.findAllById(1);
@@ -59,14 +61,14 @@ public class ProjectRepositoryTest {
         assertEquals(result,project);
     }
     @Test
-    void testSave() {
+    public void testSave() {
 
         projectDAO.save(project);
 
         verify(session, times(1)).saveOrUpdate(project);
     }
     @Test
-    void testDelete() {
+    public void testDelete() {
         when(session.get(Projects.class, 1)).thenReturn(project);
         doNothing().when(session).delete(project);
 

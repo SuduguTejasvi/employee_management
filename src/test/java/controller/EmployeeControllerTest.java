@@ -1,10 +1,10 @@
+package controller;
+
 import com.example.controller.EmployeeController;
 import com.example.dto.EmployeeDTO;
 import com.example.dto.ProjectDTO;
-import com.example.entity.Employee;
 import com.example.service.EmployeeService;
 import com.example.service.ProjectService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -12,9 +12,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
-import org.springframework.http.ResponseEntity;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
@@ -30,24 +27,24 @@ import static org.mockito.Mockito.when;
 public class EmployeeControllerTest {
 
     @InjectMocks
-    private EmployeeController employeeController;
+    public EmployeeController employeeController;
 
     @Mock
-    private EmployeeService employeeService;
+    public EmployeeService employeeService;
 
     @Mock
-    private ProjectService projectService;
+    public ProjectService projectService;
 
     @Mock
-    private Model model;
+    public Model model;
 
     @Mock
-    private BindingResult bindingResult;
+    public BindingResult bindingResult;
 
 
 
     @Test
-    void testViewEmployeePage() throws  Exception{
+    public void testViewEmployeePage() throws  Exception{
         Set<Integer> projectIds1= new HashSet<>();
         projectIds1.add(1);
         projectIds1.add(2);
@@ -71,7 +68,7 @@ public class EmployeeControllerTest {
 
     }
     @Test
-    void testaddPage() throws Exception{
+    public void testaddPage() throws Exception{
         Set<Integer> projectIds1= new HashSet<>();
         projectIds1.add(1);
         projectIds1.add(2);
@@ -94,7 +91,7 @@ public class EmployeeControllerTest {
 
     }
     @Test
-    void testDeleteEmployeeById() throws Exception {
+    public void testDeleteEmployeeById() throws Exception {
         Long employeeId = 1L;
         Set<Integer> projectIds= new HashSet<>();
         projectIds.add(1);
@@ -109,7 +106,7 @@ public class EmployeeControllerTest {
     }
 
     @Test
-    void testSavePage_success() throws Exception{
+    public void testSavePage_success() throws Exception{
         Set<Integer> projectIds= new HashSet<>();
         projectIds.add(1);
         projectIds.add(2);
@@ -121,7 +118,7 @@ public class EmployeeControllerTest {
     }
 
     @Test
-    void testSavePage_errors() throws Exception{
+    public void testSavePage_errors() throws Exception{
         Set<Integer> projectIds= new HashSet<>();
         projectIds.add(1);
         projectIds.add(2);
@@ -132,7 +129,7 @@ public class EmployeeControllerTest {
 
     }
     @Test
-    void testUpdatePage() {
+    public void testUpdatePage() {
         Long employeeId = 11L;
         Set<Integer> projectIds= new HashSet<>();
         projectIds.add(1);

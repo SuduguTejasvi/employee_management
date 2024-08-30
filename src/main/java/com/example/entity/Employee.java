@@ -1,5 +1,9 @@
 package com.example.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -9,6 +13,10 @@ import java.util.Set;
 
 @Entity
 @Table(name = "employees")
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 public class Employee {
 
     @Id
@@ -27,7 +35,7 @@ public class Employee {
 
     @Column(name = "hire_date")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd") // Ensure pattern matches the format used in input
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date hireDate;
 
     @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},fetch = FetchType.EAGER)
@@ -38,9 +46,6 @@ public class Employee {
     )
     private Set<Projects> projects = new HashSet<>();
 
-    // Constructors
-    public Employee() {
-    }
 
     public Employee(String firstName, String lastName, String email, Date hireDate) {
         this.firstName = firstName;
@@ -49,64 +54,4 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
-    // Getters and Setters
-    public Long getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(Long employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Date getHireDate() {
-        return hireDate;
-    }
-
-    public void setHireDate(Date hireDate) {
-        this.hireDate = hireDate;
-    }
-
-    // toString() method
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "employeeId=" + employeeId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", hireDate=" + hireDate +
-                '}';
-    }
-
-    public Set<Projects> getProjects() {
-        return projects;
-    }
-
-    public void setProjects(Set<Projects> projects) {
-        this.projects = projects;
-    }
 }

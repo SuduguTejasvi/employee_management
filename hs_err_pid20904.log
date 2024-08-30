@@ -86,7 +86,7 @@ Java Threads: ( => current thread )
   0x000001787b253eb0 JavaThread "Finalizer" daemon [_thread_blocked, id=25476, stack(0x0000001d6ba00000,0x0000001d6bb00000)]
   0x000001787b2725a0 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=21996, stack(0x0000001d6bb00000,0x0000001d6bc00000)]
   0x000001787b272e50 JavaThread "Attach Listener" daemon [_thread_blocked, id=20728, stack(0x0000001d6bc00000,0x0000001d6bd00000)]
-  0x000001787b275800 JavaThread "Service Thread" daemon [_thread_blocked, id=22720, stack(0x0000001d6bd00000,0x0000001d6be00000)]
+  0x000001787b275800 JavaThread "service Thread" daemon [_thread_blocked, id=22720, stack(0x0000001d6bd00000,0x0000001d6be00000)]
   0x000001787b276940 JavaThread "Monitor Deflation Thread" daemon [_thread_blocked, id=500, stack(0x0000001d6be00000,0x0000001d6bf00000)]
   0x000001787b278960 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=16024, stack(0x0000001d6bf00000,0x0000001d6c000000)]
 =>0x000001787b27cfe0 JavaThread "C1 CompilerThread0" daemon [_thread_in_native, id=22748, stack(0x0000001d6c000000,0x0000001d6c100000)]
@@ -105,7 +105,7 @@ Other Threads:
   0x000001785b3f8850 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000001d6b400000,0x0000001d6b500000] [id=15724]
   0x000001785b3f99e0 WorkerThread "G1 Conc#0" [stack: 0x0000001d6b500000,0x0000001d6b600000] [id=26408]
   0x000001785b43d090 ConcurrentGCThread "G1 Refine#0" [stack: 0x0000001d6b600000,0x0000001d6b700000] [id=24124]
-  0x000001785b43d9a0 ConcurrentGCThread "G1 Service" [stack: 0x0000001d6b700000,0x0000001d6b800000] [id=24924]
+  0x000001785b43d9a0 ConcurrentGCThread "G1 service" [stack: 0x0000001d6b700000,0x0000001d6b800000] [id=24924]
 
 Threads with active compile tasks:
 C2 CompilerThread0     1710 1332       4       jdk.internal.org.objectweb.asm.SymbolTable::addConstantUtf8 (98 bytes)

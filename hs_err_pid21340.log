@@ -81,7 +81,7 @@ Java Threads: ( => current thread )
   0x00000290ce6491e0 JavaThread "Finalizer" daemon [_thread_blocked, id=16040, stack(0x000000c48b900000,0x000000c48ba00000)]
   0x00000290ce666df0 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5332, stack(0x000000c48ba00000,0x000000c48bb00000)]
   0x00000290ce6676a0 JavaThread "Attach Listener" daemon [_thread_blocked, id=24172, stack(0x000000c48bb00000,0x000000c48bc00000)]
-  0x00000290ce669f60 JavaThread "Service Thread" daemon [_thread_blocked, id=8372, stack(0x000000c48bc00000,0x000000c48bd00000)]
+  0x00000290ce669f60 JavaThread "service Thread" daemon [_thread_blocked, id=8372, stack(0x000000c48bc00000,0x000000c48bd00000)]
   0x00000290ce66a810 JavaThread "Monitor Deflation Thread" daemon [_thread_blocked, id=9460, stack(0x000000c48bd00000,0x000000c48be00000)]
 =>0x00000290ce66b3f0 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=14236, stack(0x000000c48be00000,0x000000c48bf00000)]
   0x00000290ce67ce40 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=20504, stack(0x000000c48bf00000,0x000000c48c000000)]
@@ -107,7 +107,7 @@ Other Threads:
   0x00000290b07ab750 WorkerThread "G1 Conc#0" [stack: 0x000000c48b400000,0x000000c48b500000] [id=18824]
   0x00000290b07ee450 ConcurrentGCThread "G1 Refine#0" [stack: 0x000000c48b500000,0x000000c48b600000] [id=16412]
   0x00000290d39c5c10 ConcurrentGCThread "G1 Refine#1" [stack: 0x000000c48ce00000,0x000000c48cf00000] [id=18052]
-  0x00000290b07eec70 ConcurrentGCThread "G1 Service" [stack: 0x000000c48b600000,0x000000c48b700000] [id=26316]
+  0x00000290b07eec70 ConcurrentGCThread "G1 service" [stack: 0x000000c48b600000,0x000000c48b700000] [id=26316]
 
 Threads with active compile tasks:
 C2 CompilerThread0     4887 2297       4       org.apache.tomcat.util.bcel.classfile.ClassParser::readAttributes (180 bytes)

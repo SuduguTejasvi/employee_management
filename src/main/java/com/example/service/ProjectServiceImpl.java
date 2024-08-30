@@ -1,6 +1,6 @@
 package com.example.service;
 
-import com.example.dao.ProjectDAO;
+import com.example.repository.ProjectDAO;
 import com.example.dto.ProjectDTO;
 import com.example.entity.Projects;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.example.service;
 
-import com.example.dao.EmployeeDAO;
+import com.example.repository.EmployeeDAO;
 import com.example.dto.EmployeeDTO;
 import com.example.dto.ProjectDTO;
 import com.example.entity.Employee;
@@ -58,6 +58,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public String getEmployeeProjects(Long employeeId) {
         return employeeDAO.getEmployeeProjects(employeeId);
     }
+
 
     public EmployeeDTO convertToDTOWithProjects(Employee employee) {
         if (employee == null) {

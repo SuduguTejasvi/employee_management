@@ -58,20 +58,16 @@ public class EmployeeController {
                            BindingResult result,
                            @RequestParam(value = "projectIds", required = false) List<Integer> projectIds,
                            Model model) {
-        // Check if there are validation errors
         if (result.hasErrors()) {
-            // If there are errors, reload the form with the same data and show error messages
             List<ProjectDTO> projects = projectService.findAll();
             model.addAttribute("projects", projects);
             log.error("Failed to add a employee");
             return "employee/add-employee";
         }
-
-        // Bind selected projects to the employee DTO
         if (projectIds != null && !projectIds.isEmpty()) {
             employeeDTO.setProjectIds(new HashSet<>(projectIds));
         } else {
-            employeeDTO.setProjectIds(new HashSet<>()); // Ensure projectIds is never null
+            employeeDTO.setProjectIds(new HashSet<>());
         }
         log.info("successfully added employee");
         employeeService.save(employeeDTO);
@@ -91,7 +87,6 @@ public class EmployeeController {
         EmployeeDTO employeeDTO = employeeService.findById(employeeId);
         List<ProjectDTO> projects = projectService.findAll();
 
-        // Get project IDs associated with the employee
         Set<Integer> employeeProjectIds = employeeDTO.getProjectIds();
 
         model.addAttribute("employee", employeeDTO);

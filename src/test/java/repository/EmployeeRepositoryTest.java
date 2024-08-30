@@ -1,4 +1,6 @@
-import com.example.dao.EmployeeDAOImpl;
+package repository;
+
+import com.example.repository.EmployeeDAOImpl;
 import com.example.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.query.NativeQuery;
@@ -21,32 +23,32 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class EmployeeRepositoryTest {
     @InjectMocks
-    private EmployeeDAOImpl employeeDAO;
+    public EmployeeDAOImpl employeeDAO;
 
     @Mock
-    private SessionFactory sessionFactory;
+    public SessionFactory sessionFactory;
 
     @Mock
-    private NativeQuery<String> nativeQuery;
+    public NativeQuery<String> nativeQuery;
 
     @Mock
-    private Session session;
+    public Session session;
 
-    private Employee employee;
+    public Employee employee;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         employee = new Employee("John","Doe", "john.doe@example.com",new Date());
         when(sessionFactory.getCurrentSession()).thenReturn(session);
     }
 
     @Test
-    void testSave() {
+    public void testSave() {
         employeeDAO.save(employee);
         verify(session, times(1)).merge(employee);
     }
     @Test
-    void testFindAll() {
+    public void testFindAll() {
         List<Employee> employees = new ArrayList<>();
         employees.add(employee);
 
@@ -58,7 +60,7 @@ public class EmployeeRepositoryTest {
         assertEquals(1, result.size());
     }
     @Test
-    void testFindById() {
+    public void testFindById() {
         when(session.get(Employee.class, 1L)).thenReturn(employee);
 
         Employee result = employeeDAO.findById(1L);
@@ -67,7 +69,7 @@ public class EmployeeRepositoryTest {
 
     }
     @Test
-    void testDelete() {
+    public void testDelete() {
         when(session.get(Employee.class, 1L)).thenReturn(employee);
 
         employeeDAO.delete(1L);
@@ -75,7 +77,7 @@ public class EmployeeRepositoryTest {
         verify(session, times(1)).delete(employee);
     }
     @Test
-    void testGetEmployeeProjects() {
+    public void testGetEmployeeProjects() {
         when(session.createNativeQuery("CALL get_projects(:employeeId)")).thenReturn(nativeQuery);
         when(nativeQuery.setParameter("employeeId", 1L)).thenReturn(nativeQuery);
         when(nativeQuery.getSingleResult()).thenReturn("Project A, Project B");

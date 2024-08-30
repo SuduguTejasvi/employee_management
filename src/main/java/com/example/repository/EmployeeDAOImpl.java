@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.repository;
 
 import com.example.entity.Employee;
 import org.hibernate.Session;
@@ -31,7 +31,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
     public void save(Employee employee) {
         Session session = sessionFactory.getCurrentSession();
-        session.merge(employee);  // Changed from saveOrUpdate to merge
+        session.merge(employee);
     }
 
 
