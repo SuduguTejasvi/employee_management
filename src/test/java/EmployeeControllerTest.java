@@ -45,7 +45,6 @@ public class EmployeeControllerTest {
     private BindingResult bindingResult;
 
 
-    private MockMvc mockMvc;
 
     @Test
     void testViewEmployeePage() throws  Exception{
