@@ -1,0 +1,6 @@
+30-Aug-2024 00:31:53.285 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+30-Aug-2024 00:31:53.377 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+30-Aug-2024 00:33:22.875 INFO [Thread-6] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+30-Aug-2024 07:07:20.383 INFO [main] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+30-Aug-2024 07:07:20.547 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcher'
+30-Aug-2024 07:09:12.320 INFO [Thread-6] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
